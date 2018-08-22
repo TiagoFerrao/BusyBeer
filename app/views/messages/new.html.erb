@@ -1,0 +1,26 @@
+<div class="container background-white section-messages-with-user">
+  <div class="row">
+    <div class="col-xs-12">
+
+<h3>Messages with <%=@booking.student.name %></h3>
+
+  <% @history.each do |message| %>
+
+  <%=message.content%>
+  <% end %>
+
+
+
+
+      <%= simple_form_for [@booking, @message]  do |f| %>
+
+        <div class="new-form-inputs">
+          <%= f.input :content, input_html: { class: 'input_with_icon email-icon' }, label: false %>
+          <div class="new-form-actions">
+            <%= f.button :submit,"Send", class:'btn btn-accent'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

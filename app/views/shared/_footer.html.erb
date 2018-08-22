@@ -1,0 +1,42 @@
+<div class="footer">
+  <div class="container footer-box <%= current_page?(root_path) ? 'active' : '' %>">
+    <div class= "footer-item text-center <%= current_page?(root_path) ? 'active' : '' %>">
+    <%= link_to root_path do %>
+    <i class="fal fa-search"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container footer-box <%= current_page?(jobs_path) ? 'active' : '' %>">
+  <div class="footer-item text-center <%= current_page?(jobs_path) ? 'active' : '' %>" >
+    <%= link_to jobs_path do %>
+    <i class="fal fa-briefcase"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container footer-box <%= current_page?(new_job_path) ? 'active' : '' %>" >
+  <div class="footer-item text-center <%= current_page?(new_job_path) ? 'active' : '' %>" >
+    <%= link_to new_job_path do %>
+    <i class="fal fa-plus-square"></i>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="container footer-box <%= current_page?(root_path) ? 'active' : '' %>" >
+  <div class="footer-item text-center <%= current_page?(root_path) ? 'active' : '' %>" >
+    <%= link_to root_path do %>
+    <i class="fal fa-comment"></i>
+    <% end %>
+  </div>
+</div>
+
+<div class="container footer-box <%= current_page?(user_path(current_user)) ? 'active' : '' %>" >
+  <div class="footer-item text-center <%= current_page?(user_path(current_user)) ? 'active' : '' %>" >
+    <%= link_to user_path(current_user) do %>
+    <i class="fal fa-user"></i>
+    <% end %>
+  </div>
+</div>
+</div>

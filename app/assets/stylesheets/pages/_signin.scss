@@ -1,0 +1,26 @@
+.section-signin-top {
+  height:50vh;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  padding-top: 25px;
+  font-size: 16px;
+  h1 {font-size: 60px;}
+}
+
+
+.section-signin-bottom {
+  height:50vh;
+  max-width: 375px;
+
+  a {
+    color: $accent !important;
+    font-size: 12px;
+  }
+
+  .form-actions {
+    margin-top: 25px;
+  }
+
+
+  }

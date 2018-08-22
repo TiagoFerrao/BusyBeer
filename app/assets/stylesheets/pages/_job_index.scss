@@ -1,0 +1,16 @@
+/* .section-jobs-index {
+  padding-top: 20px;
+}
+ */
+
+
+.my-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-left: 25px;
+  width: 500px;
+  border-bottom: 0.5px solid $gray3;
+
+}

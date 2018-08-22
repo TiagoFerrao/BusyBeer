@@ -1,0 +1,31 @@
+.background-white {
+  background-color: white;
+  padding-top: 25px;
+  min-width: 375px;
+  max-width: 500px;
+  box-shadow: 1px 5px 5px 1px $gray4;
+}
+
+.btn-accent {
+  background-color: $accent !important;
+  color: white!important;
+  width: 100%;
+  a {
+    color: white!important;
+  }
+}
+
+
+.btn-dark {
+  background-color: $dark !important;
+  color: white;
+  width: 100%;
+}
+
+
+.background-accent {
+  background-color: $accent;
+  padding-top: 25px;
+  min-width: 375px;
+  max-width: 500px;
+  box-shadow: 1px 5px 5px 1px $gray4; }

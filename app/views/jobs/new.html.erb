@@ -1,0 +1,35 @@
+<div class="container background-white section-new-job">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1 id="titlenew" style= "position: center;">Create a Job</h1>
+      <%= simple_form_for @job do |f| %>
+        <%= f.error_notification %>
+        <% if @job.errors.any? %>
+  <div class="text-center" id="error_explanation">
+    <h2><%= pluralize(@job.errors.count, "error") %> : Please fill all the form correctly</h2>
+
+    <ul class="list-unstyled" >
+    <% @job.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+        <div class="new-form-inputs">
+          <%= f.input :title, placeholder: "Job Title", input_html: { class: 'input_with_icon user-icon' }, label: false %>
+          <%= f.input :address, placeholder: "Job Location" , input_html: { class: 'input_with_icon address-icon', id: 'job_address'}, label: false %>
+          <%= f.input :time, placeholder: 'Date & Time', as: :string, input_html: {id: "datepicker", class: 'input_with_icon calendar-icon' }, label: false %>
+          <%= f.input :price, placeholder: "Price" , input_html: { class: 'input_with_icon price-icon' }, label: false %>
+          <%= f.input :duration, placeholder: 'Job Duration' , input_html: { class: 'input_with_icon time-icon' }, label: false %>
+          <%= f.input :category_id, collection: Category.all, prompt: "Choose a category" %>
+          <%= f.input :description, placeholder: "Job Description (min 50 characters)", input_html: {rows: 7} %>
+          <div class="new-form-actions">
+            <%= f.button :submit,"Create Job", class:'btn btn-accent'%>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+

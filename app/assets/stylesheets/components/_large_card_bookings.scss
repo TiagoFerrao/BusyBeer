@@ -1,0 +1,50 @@
+.card {
+  height: 156px;
+  background-color: $light;
+  box-shadow: 1px 1px 1px 1px $gray3;
+  margin-top: 6px;
+  position: relative;
+
+  .booking-card-section {
+    &.up {padding-top: 15px;
+      .job-card-title {
+        h4 {font-weight: 600;
+            padding-left: 15px;
+            text-align: left;
+            height: 72px;
+            border-left: 1px solid $gray2;
+            }
+        }
+      .job-card-delete {
+        position: absolute;
+        top: 15px;
+        right:15px;
+        a {
+          img {
+            height:20px;
+          }
+        }
+      }
+    }
+
+    &.down {
+      .job-card-date {
+        position: absolute;
+        bottom: 10px;
+        left: -25px;
+          h4 {
+          text-align: center;
+          text-transform: capitalize;
+          font-weight: bold;
+          }
+        }
+        .time-booking-card{
+          h4 {
+          text-align: center;
+          text-transform: capitalize;
+          font-weight: bold;
+          }
+        }
+      }
+    }
+  }

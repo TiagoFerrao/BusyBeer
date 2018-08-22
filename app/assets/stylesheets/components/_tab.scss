@@ -1,0 +1,11 @@
+.tab {
+  display:flex;
+  cursor: pointer;
+  .tab-section {
+    width: 50%;
+  }
+}
+
+.tab-active {
+  border-bottom: 3px solid $accent;
+  }

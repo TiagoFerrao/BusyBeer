@@ -1,0 +1,16 @@
+<h1>Messages#index</h1>
+<p>Find me in app/views/messages/index.html.erb</p>
+
+mostra mensagens agrupadas por user e refere o booking
+  @messages = Message.all
+  @my_created_messages = @messages.where(created_by_id: current_user)
+  @my_received_messages = @messages.where(sent_to: current_user)
+
+
+@booking
+@booking.student
+
+
+mostra todos em todos os bookings que têm mensagens
+
+conta o numero de mensagens

@@ -1,0 +1,77 @@
+
+.input_with_icon {
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 43px;
+  fill: $gray4;
+
+  &.email-icon {
+    background-image: url('icons/e-mail');
+    background-size: 20px;
+  }
+
+  &.password-icon {
+    background-image: url('icons/password');
+    background-size: 15px;
+  }
+
+  &.user-icon {
+    background-image: url('icons/user');
+  }
+
+  &.delete-icon {
+    background-image: url('icons/delete');
+  }
+
+  &.price-icon {
+    background-image: url('icons/price');
+    background-size: 12px;
+  }
+
+  &.calendar-icon {
+    background-image: url('icons/calendar-icon');
+    background-size: 17px;
+  }
+
+  &.address-icon {
+    background-image: url('icons/address-icon');
+    background-size: 15px;
+  }
+
+  &.time-icon {
+    background-image: url('icons/time-icon');
+    background-size: 17px;
+  }
+
+  &.trash-icon {
+    background-image: url('icons/trash-alt-light');
+    background-size: 17px;
+  }
+
+
+
+
+
+}
+
+.icon_on_a_button {
+  height: 15px;
+  fill: white;
+  padding-left: 10px;
+}
+
+.icon_on_text {
+  height: 15px;
+  fill: $gray4;
+}
+
+.icon_on_small_card{
+  height: 35px;
+
+}
+
+.icon_on_large_card {
+  height: 50px;
+  width: 50px;
+  color: $accent;
+}

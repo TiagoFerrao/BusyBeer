@@ -1,0 +1,48 @@
+
+
+<%= link_to job_path(job) do %>
+  <div class="container-fluid">
+
+    <div class="card col-xs-12">
+      <div class="row">
+        <div class="container job-card-section up">
+          <div class="job-card-category-icon col-xs-2">
+            <% if job.category.name.downcase == "moving" %>
+              <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card") %>
+            <% elsif job.category.name.downcase == "sitting" %>
+              <%= inline_svg('icons/paw-light.svg', class:"icon_on_large_card") %>
+            <% elsif job.category.name.downcase == "home" %>
+              <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card") %>
+            <% elsif job.category.name.downcase == "errands" %>
+              <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card") %>
+            <% end %>
+          </div>
+          <div class="job-card-title col-xs-9">
+            <h4><%= job.title.capitalize %></h4>
+          </div>
+          <div class="job-card-delete col-xs-1">
+            <%= link_to image_tag('icons/trash-alt-light'), job_path(job), method: "delete"%>
+          </div>
+        </div> <!-- fim do section up -->
+      </div> <!-- fim do row -->
+
+         <!-- fim do section up -->
+      <div class="row">
+        <div class='job-card-section down'>
+          <div class='job-card-date col-xs-4'>
+            <h4><%= job.time.strftime('%a %d') %></h4>
+            <h4><%= job.time.strftime('%B') %></h4>
+          </div>
+          <div class='job-card-bookings col-xs-8 text-right'>
+            <% if job.bookings.empty?  %>
+              <p>no applications yet</p>
+            <% else %>
+              <%= "#{job.bookings.count} students applied" %>
+            <% end %>
+          </div>
+        </div> <!-- fim da section down -->
+      </div> <!-- fim do row -->
+
+    </div>
+  </div>
+<% end %>

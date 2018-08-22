@@ -1,0 +1,58 @@
+.profile-photo {
+  width: 375px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+.ratings-boxes {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 320px;
+
+  }
+
+
+.profile-fields {
+  height: 472px;
+  width: 375px;
+
+  #profile-name { h4{
+  margin-top: -10px!important;
+  padding-bottom: 10px;
+  color: black;
+}}
+
+.btn {
+  margin-bottom: 10px;
+}
+
+  #profile-anchor, #profile-jobs-stats, #profile-description {
+    .icon_on_text {
+      float: left;
+    }
+
+    h5 {
+      position: relative;
+      left: 10px;
+    }
+  }
+}
+
+// #profile-see-more {
+//   .icon_on_text {
+//     float: right;
+//     border: 1px solid black;
+//     width: 300px;
+//   }
+//
+//   h5 {
+//     position: relative;
+//     right: 20px;
+//     top:20px;
+//     color: $gray4;
+//   }
+// }

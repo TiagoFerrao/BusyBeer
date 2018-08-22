@@ -1,0 +1,35 @@
+<!-- first half of the page (50%) -->
+<div class="container-fluid section-signup">
+  <h1 class="text-center">
+    BusyBear
+  </h1>
+  <%= image_tag 'bear.png', class: "img-responsive center-block", size: "200x200" %>
+</div>
+<!-- second half of the page (50%) -->
+<div class="container background-white">
+
+  <div class="container-fluid section-signup">
+
+    <div class="container fields">
+      <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.error_notification %>
+
+      <div class="form-inputs">
+
+        <div class="form-group">
+          <%= f.input :name, required: true, autofocus: true, placeholder: "Full Name", label: false, input_html: { class: 'input_with_icon user-icon' } %>
+          <%= f.input :email, required: true, autofocus: true, placeholder: "name@email.com", label: false, input_html: { class: 'input_with_icon email-icon' } %>
+        </div>
+
+        <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { class: 'input_with_icon password-icon' } %>
+      </div>
+
+      <div class="form-actions">
+        <%= f.button :submit, "Sign up", class: "btn btn-accent" %>
+      </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
+
+  </div>
+</div>
+</div>

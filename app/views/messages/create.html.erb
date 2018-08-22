@@ -1,0 +1,12 @@
+<h1>Messages#create</h1>
+<p>Find me in app/views/messages/create.html.erb</p>
+
+<%= @message  %>
+<%= @created_by.email.split("@")[0].capitalize %>
+<%= @send_to.name %>
+
+
+<%= simple_form_for @message do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Send message", class: "btn btn-primary" %>
+<% end %>

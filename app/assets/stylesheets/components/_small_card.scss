@@ -1,0 +1,27 @@
+
+
+  .small_card {
+
+  height: 140px;
+  width: 140px;
+  border: 1px solid $accent;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 5px;
+
+  &:hover{
+    background-color: $accent!important;
+    color: white;
+  }
+
+    h6{
+    font-size: 10px!important;
+      }
+
+    .stars {
+      height: 12px;
+      }
+
+
+}

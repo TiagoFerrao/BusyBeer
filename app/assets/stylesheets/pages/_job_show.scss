@@ -1,0 +1,51 @@
+.job-section-title-bar {
+  color: $dark;
+  background-color: $gray1;
+  vertical-align: center;
+}
+
+.job-section-title-bar {
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.background-gray {
+background-color: $gray3;
+margin-top: 5px;
+}
+
+.category_job_show {
+text-align: right;
+padding-top: 10px;
+margin-top: 20px;
+}
+
+.avatar-for-job-little {
+  width: 55px;
+  border-radius: 50%;
+}
+
+.job-specification {
+  color: black;
+}
+
+.show-location {
+  font-family: "Raleway", "Helvetica", "sans-serif";
+  font-weight: 500;
+  line-height: 1.1;
+  color: inherit;
+
+}
+
+.show-location a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.show-location a:hover {
+    opacity: 1;
+    text-decoration: none;
+    color: #999999;
+}

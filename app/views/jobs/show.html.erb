@@ -1,0 +1,105 @@
+<div class="show-job-frame">
+  <div class="container-fluid section1-title-and-icon">
+      <div class="row">
+          <div class="col-xs-10 job-title">
+            <h1><strong> <%= @job.title.capitalize %></strong></h1>
+          </div>
+          <div class="col-xs-2 job-category-icon">
+            <% if @job.category.name == "Moving" %>
+             <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card")  %>
+           <% elsif @job.category.name == "Sitting" %>
+             <%= inline_svg('icons/paw-light.svg', class:"icon_on_large_card") %>
+           <% elsif @job.category.name == "Home" %>
+             <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card") %>
+           <% elsif @job.category.name == "Errands" %>
+             <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card") %>
+           <% end %>
+          </div>
+      </div>
+  </div> <!-- fim da section 1 titulo e icon -->
+  <div class="container-fluid section2-owner-and-details background-white">
+      <div class="row">
+          <!-- foto -->
+          <div class="col-xs-3 job-owner">
+            <% if @job.client.photo? %>
+              <% image_options = { height: 50, width: 50, crop: :fill } %>
+              <%= cl_image_tag @job.client.photo, image_options %>
+            <% else  %>
+              <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
+            <% end %>
+          </div>
+          <!-- dia -->
+          <div class="col-xs-3 job-details">
+            <h4><%= @job.time.strftime('%d %b') %></h4>
+          </div>
+          <!-- hora -->
+          <div class="col-xs-3 job-details">
+            <h4><%= @job.time.strftime("%I:%M%p") %></h4>
+          </div>
+          <!-- preço -->
+          <div class="col-xs-3 job-details">
+            <h4><%= "#{@job.price}€" %></h4>
+          </div>
+      </div> <!-- fim do row 2 -->
+  </div> <!-- fim da section 2 imagem e detalhes -->
+  <div class="container-fluid section3-job-description">
+    <div class="row ">
+      <div class="col-xs-12">
+        <h3>Description</h3>
+        <p><%= @job.description %></p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid section4-map-falso">
+    <div class="row">
+      <div class="col-xs-12">
+        <div
+           id="map"
+           style="width: 100%;
+           height: 600px;"
+           data-markers="<%= @markers.to_json %>"
+         >
+         </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid section5-bookings">
+    <div class="row">
+          <!-- If it's my job -->
+      <% if @job.client == current_user %>
+        <% if @job.students.empty? %>
+          <h4>There are no candidates for this job</h4>
+        <% else %>
+        <!-- Mostrar students applied SE estados de todos sao pendentes -->
+          <% if @selected_student == nil %>
+            <h3>Students Applied</h3>
+            <% @job.students.each do |student| %>
+              <div class="card">
+                <%= render 'shared/card_students_applied', student: student, booking: @job.bookings.find_by(student: student) %>
+            <% end %>
+            </div>
+          <%else %>
+            <div class="card">
+              <%= render 'shared/card_students_applied', student: @selected_student, booking: @job.bookings.find_by(student: @selected_student) %>
+            </div>
+          <% end %>
+        <% end %>
+    </div>
+  </div>
+  <div class="container-fluid section6-apply-button">
+    <div class="row">
+      <!-- If it is NOT my job -->
+      <% elsif @job.students.include? current_user %>
+      <!-- If I already applied for it -->
+        <div class ="new-form-actopms">
+          <p>Applied</p>
+        </div>
+      <% else %>
+      <!-- If I didn't applied for this job - btn to appl -->
+      <div class ="new-form-actopms">
+        <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div> <!-- fim da pagina show job frame-->

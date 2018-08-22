@@ -1,0 +1,39 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card-category-item" style="padding-bottom: 10px;">
+      <h2 style="margin-top: 10px; margin-bottom: 5px;"><strong> <%= job.title.capitalize %>
+          <% if job.category.name.downcase == "moving" %>
+            <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card", :style=>"width: 30px; height: 30px; padding-left: 5px;")  %>
+          <% elsif job.category.name.downcase == "sitting" %>
+            <%= inline_svg('icons/paw-light.svg', class:"icon_on_large_card", :style=>"width: 30px; height: 30px; padding-left: 5px") %>
+          <% elsif job.category.name.downcase == "home" %>
+            <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card", :style=>"width: 30px; height: 30px; padding-left: 5px") %>
+          <% elsif job.category.name.downcase == "errands" %>
+            <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card", :style=>"width: 30px; height: 30px; padding-left: 5px") %>
+          <% end %></strong></h2>
+      <div style="display: flex;">
+        <div>
+          <h4><%= job.time.strftime('%d %b')%><%= " " %><%= job.time.strftime("%I:%M%p") %></h4>
+        </div>
+        <div class="col-md-4 pull-right">
+          <h4><%= "#{job.price}€" %></h4>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: center; padding-bottom: 10px;">
+        <%= job.client.name %>
+        <div class="col-md-4 pull-right" style="padding-left: 50px;">
+          <% if job.client.photo? %>
+            <%= cl_image_tag job.client.photo, :style=>"width: 30px; height: 30px; border-radius: 50%;" %>
+          <% else  %>
+             <%= image_tag("icons/no_picture.svg", :style=>"width: 30px; height: 30px; border-radius: 50%;")%>
+          <% end %>
+        </div>
+      </div>
+      <div>
+        <%= link_to "Details", job_path(job), style: "margin-bottom: 50px;"  %>
+      </div>
+    </div>
+  </div>
+</div>

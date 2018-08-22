@@ -1,0 +1,35 @@
+
+  <div class="container-fluid tab background-white" id='tab-div'>
+<!--     <div class='tab-section tab-active'>
+ -->
+<!--     <ul class="nav nav-tabs ">
+      <li class="active tab-section tab-active text-center">
+        <a data-toggle="tab" href="#activejobs">Active jobs</a></li>
+      <li><a data-toggle="tab" class="tab-section" href="#history">History</a></li>
+    </ul>
+
+ -->
+ <div class='tab-section tab-active'>
+    <p class='text-center'>Active jobs</p>
+  </div>
+
+  <div class='tab-section'>
+    <p class='text-center'>History</p>
+  </div>
+</div>
+
+  <script>
+// Add active class to the current button (highlight it)
+
+var header = document.getElementById("tab-div");
+var btns = header.getElementsByClassName("tab-section");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("tab-active");
+    current[0].className = current[0].className.replace(" tab-active", "");
+    this.className += " tab-active";
+  });
+}
+</script>
+
+

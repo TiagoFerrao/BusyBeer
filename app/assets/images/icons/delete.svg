@@ -1,0 +1,24 @@
+<svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M13.22,14.64 L10,11.42 L6.78,14.64 L5.36,13.22 L8.58,10 L5.36,6.78 L6.78,5.36 L10,8.58 L13.22,5.36 L14.64,6.78 L11.42,10 L14.64,13.22 L13.22,14.64 Z M20,10 C20,4.48 15.52,0 10,0 C4.48,0 0,4.48 0,10 C0,15.52 4.48,20 10,20 C15.52,20 20,15.52 20,10 L20,10 Z" id="path-1"></path>
+    </defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill='#DDDDDD' fill-rule="evenodd">
+        <g id="Card-Large" transform="translate(-344.000000, -9.000000)">
+            <g id="Cancel-Icon" transform="translate(339.000000, 4.000000)">
+                <g id="Icon-Color" transform="translate(5.000000, 5.000000)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#FFFFFF" xlink:href="#path-1"></use>
+                    <g id="Color-Grey-2" mask="url(#mask-2)" fill="#DDDDDD" fill-rule="nonzero">
+                        <g transform="translate(-5.000000, -5.000000)" id="Rectangle-Copy">
+                            <rect x="0" y="0" width="30" height="30"></rect>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

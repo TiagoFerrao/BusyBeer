@@ -1,0 +1,28 @@
+<%= render 'shared/bar_options' %>
+
+
+<div class="container-fluid my-cards">
+  <h2>My Jobs</h2>
+</div>
+
+      <% if @my_jobs.empty? %>
+        <p>You don't have active jobs :( </p>
+      <% else %>
+        <% @my_jobs.each do |job|%>
+          <% if (job.time > Time.now)%>
+            <%= render 'shared/large_card', job: job %>
+          <% end %>
+        <% end %>
+
+
+  <div class="container-fluid my-cards">
+    <h2>My bookings</h2>
+  </div>
+
+    <% @jobs.each do |job| %>
+      <% if (job.students.include? current_user) %>
+
+        <%= render 'shared/large_card_bookings', job: job %>
+      <% end %>
+    <% end %>
+  <% end %>

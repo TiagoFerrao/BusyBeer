@@ -1,0 +1,26 @@
+.header-section {
+  display: flex;
+  align-items: flex-end;
+  flex-wrap: nowrap;
+  height: 88px;
+  background-color: $accent;
+
+  .arrow {
+    padding: 0px 0px 0px 5px;
+    width: 10px;
+  }
+
+  .text-header {
+    padding: 0;
+    color: $gray1;
+    text-align: center;
+  }
+
+  i{
+    font-size: 25px;
+  }
+
+  a {
+    color: white;
+  }
+}
