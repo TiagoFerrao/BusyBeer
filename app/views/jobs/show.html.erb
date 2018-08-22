@@ -1,17 +1,17 @@
-<div class="show-job-frame">
-  <div class="container-fluid section1-title-and-icon">
+<div class="show-job-frame col-xs-12 col-md-6">
+  <div class="container section1-title-and-icon">
       <div class="row">
           <div class="col-xs-10 job-title">
             <h1><strong> <%= @job.title.capitalize %></strong></h1>
           </div>
           <div class="col-xs-2 job-category-icon">
-            <% if @job.category.name == "Moving" %>
+            <% if @job.category.name == "moving" %>
              <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card")  %>
-           <% elsif @job.category.name == "Sitting" %>
+           <% elsif @job.category.name == "sitting" %>
              <%= inline_svg('icons/paw-light.svg', class:"icon_on_large_card") %>
-           <% elsif @job.category.name == "Home" %>
+           <% elsif @job.category.name == "home" %>
              <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card") %>
-           <% elsif @job.category.name == "Errands" %>
+           <% elsif @job.category.name == "errands" %>
              <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card") %>
            <% end %>
           </div>
@@ -53,12 +53,14 @@
   <div class="container-fluid section4-map-falso">
     <div class="row">
       <div class="col-xs-12">
-        <div
+        <!-- <div
            id="map"
            style="width: 100%;
            height: 600px;"
            data-markers="<%= @markers.to_json %>"
-         >
+         > -->
+         <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?zoom=15&size=300x200&sensor=false&maptype=roadmap&markers=color:red|#{@job.address}&key=#{ENV['GOOGLE_API_SERVER_KEY']}", id:"show-job-map" %>
+
          </div>
       </div>
     </div>

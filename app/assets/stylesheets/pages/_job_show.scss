@@ -1,3 +1,11 @@
+.show-job-frame{
+  display: flex;
+  flex-direction: column;
+  width: 375px;
+
+
+}
+
 .job-section-title-bar {
   color: $dark;
   background-color: $gray1;
@@ -27,7 +35,9 @@ margin-top: 20px;
 }
 
 .job-specification {
-  color: black;
+  color: $dark;
+
+
 }
 
 .show-location {
@@ -48,4 +58,9 @@ margin-top: 20px;
     opacity: 1;
     text-decoration: none;
     color: #999999;
+}
+
+#show-job-map {
+  text-align: center;
+
 }

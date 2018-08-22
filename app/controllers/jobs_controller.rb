@@ -39,7 +39,6 @@ class JobsController < ApplicationController
                 content: render_to_string(partial: "/shared/job_map_info", locals: { job: @job})
               }
             }]
-
     @selected_student= nil
     @job.bookings.each do |booking|
       if booking.accepted?
