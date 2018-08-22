@@ -22,10 +22,10 @@
           <!-- foto -->
           <div class="col-xs-3 job-owner">
             <% if @job.client.photo? %>
-              <% image_options = { height: 50, width: 50, crop: :fill } %>
+              <% image_options = { height: 50, width: 50, radius: 50, crop: :fill } %>
               <%= cl_image_tag @job.client.photo, image_options %>
             <% else  %>
-              <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
+              <%= image_tag("icons/user.svg", class:"avatar-round-small", id:"job-show-owner")%>
             <% end %>
           </div>
           <!-- dia -->
