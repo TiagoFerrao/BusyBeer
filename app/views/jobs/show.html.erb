@@ -76,6 +76,7 @@
 
     <% if @job.client == current_user %>
       <% if @job.students.empty? %>
+      <hr>
         <h4>There are no candidates for this job</h4>
       <% else %>  <!-- Mostrar students applied SE estados de todos sao pendentes -->
         <% if @selected_student == nil %>
@@ -103,11 +104,17 @@
     <% elsif @job.students.include? current_user %>
       <!-- If I already applied for it -->
       <div class="new-form-actopms">
-        <p>Applied</p>
+        <a href="#" class="btn btn-accent">You already applied for this job</a>
+
       </div>
     <% else %> <!-- If I didn't applied for this job - btn to appl -->
-      <div class="new-form-actopms">
+      <div class="new-form-actions">
         <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post"%>
+
+        <%= link_to bookings_path(job: @job.id, student: current_user), method: "post" do%>
+          <a href="#" class="btn btn-accent">Apply for this job</a>
+        <% end %>
+
       </div>
     <% end %>
   </div>
