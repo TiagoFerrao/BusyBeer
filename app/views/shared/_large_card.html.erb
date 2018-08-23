@@ -1,48 +1,58 @@
-
-
 <%= link_to job_path(job) do %>
-  <div class="container-fluid">
-    <div class="card col-xs-12">
+<div class="container-fluid">
+  <div class="card col-xs-12">
 
-      <div class="row">
-        <div class="container job-card-section up">
-          <div class="job-card-category-icon col-xs-2">
-            <% if job.category.name.downcase == "moving" %>
-              <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card") %>
+    <div class="row">
+      <div class="container job-card-section up">
+        <div class="job-card-category-icon col-xs-2">
+          <% if job.category.name.downcase == "moving" %>
+            <%= inline_svg('icons/truck-moving-light.svg', class:"icon_on_large_card") %>
             <% elsif job.category.name.downcase == "sitting" %>
               <%= inline_svg('icons/paw-light.svg', class:"icon_on_large_card") %>
-            <% elsif job.category.name.downcase == "home" %>
-              <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card") %>
-            <% elsif job.category.name.downcase == "errands" %>
-              <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card") %>
-            <% end %>
+              <% elsif job.category.name.downcase == "home" %>
+                <%= inline_svg('icons/home-light.svg', class:"icon_on_large_card") %>
+                <% elsif job.category.name.downcase == "errands" %>
+                  <%= inline_svg('icons/person-carry-light.svg', class:"icon_on_large_card") %>
+                <% end %>
+              </div>
+              <div class="job-card-title col-xs-9">
+                <h4><%= job.title.capitalize %></h4>
+              </div>
+              <div class="job-card-delete col-xs-1">
+                <%= link_to image_tag('icons/trash-alt-light.svg'), job_path(job), method: "delete"%>
+              </div>
+            </div>
+            <!-- fim do section up -->
           </div>
-          <div class="job-card-title col-xs-9">
-            <h4><%= job.title.capitalize %></h4>
-          </div>
-          <div class="job-card-delete col-xs-1">
-            <%= link_to image_tag('icons/trash-alt-light.svg'), job_path(job), method: "delete"%>
-          </div>
-        </div> <!-- fim do section up -->
-      </div> <!-- fim do row  1-->
+          <!-- fim do row 1-->
 
-         <!-- fim do section up -->
-      <div class="row">
-        <div class='job-card-section down'>
-          <div class='job-card-date col-xs-4'>
-            <h4><%= job.time.strftime('%a %d') %></h4>
-            <h4><%= job.time.strftime('%B') %></h4>
-          </div>
-          <div class='job-card-bookings col-xs-8 text-right'>
-            <% if job.bookings.empty?  %>
-              <p>no applications yet</p>
-            <% else %>
-              <%= "#{job.bookings.count} students applied" %>
-            <% end %>
-          </div>
-        </div> <!-- fim do row section down -->
-      </div> <!-- fim da section down -->
+          <!-- fim do section up -->
+          <div class="row">
+            <div class='job-card-section down'>
+              <div class='job-card-date col-xs-4'>
+                <h4><%= job.time.strftime('%a %d') %></h4>
+                <h4><%= job.time.strftime('%B') %></h4>
+              </div>
+              <div class='job-card-bookings col-xs-8 text-right'>
+                <% if job.bookings.empty?  %>
+                  <p>No applications yet</p>
+                <% else %>
+                  <% if job.bookings.where(state:1).nil? %>
+                    <!-- 1-accept -->
+                    <%="#{job.bookings.count} students applied" %>
+                  <% else %>
+                    <!-- show avatar do student -->
+                    <div class="student-photo-on-job-list text-right"><% image_options = { height: 50, width: 50, radius:50, crop: :fill } %>
+                    <%= cl_image_tag job.bookings.find_by(state:1).student.photo, image_options %>
+                    <% end %>  <span>will do your job</span></div>
 
-    </div>
-  </div>
-<% end %>
+                  <% end %>
+                </div>
+              </div>
+              <!-- fim do row section down -->
+            </div>
+            <!-- fim da section down -->
+
+          </div>
+        </div>
+      <% end %>
