@@ -52,10 +52,10 @@
 </div> <!-- fim da section 2 imagem e detalhes -->
 
 <div class="container-fluid section3-job-description">
-  <div class="row ">
+  <div class="row w3-row">
     <div class="col-xs-12">
       <h3>Description</h3>
-      <p><%= @job.description %></p>
+      <p class="text-center"><%= @job.description %></p>
     </div>
   </div>
 </div>
@@ -63,7 +63,7 @@
 <div class="container-fluid section4-map-falso">
   <div class="row">
     <div class="col-xs-12">
-      <div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>" >
+      <div id="map" style="width: 100%; height: 300px;" data-markers="<%= @markers.to_json %>" >
 
     </div>
   </div>
@@ -103,16 +103,12 @@
     <% elsif @job.students.include? current_user %>
       <!-- If I already applied for it -->
       <div class="new-form-actopms">
-        <a href="#" class="btn btn-accent">You already applied for this job</a>
+        <a href="#" class="btn btn-accent">Applied</a>
 
       </div>
     <% else %> <!-- If I didn't applied for this job - btn to appl -->
-      <div class="new-form-actions">
-        <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post"%>
-
-        <%= link_to bookings_path(job: @job.id, student: current_user), method: "post" do%>
-          <a href="#" class="btn btn-accent">Apply for this job</a>
-        <% end %>
+      <div class="new-form-actions applied-button">
+        <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post", class:"btn btn-accent"%>
 
       </div>
     <% end %>
