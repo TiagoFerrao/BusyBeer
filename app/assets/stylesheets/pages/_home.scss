@@ -1,11 +1,11 @@
 #homepage_container {
   width: 375px;
   display:flex;
-  flex-direction: column;
-  height: 100%;
+  flex-direction:column;
   justify-content:center;
   margin: 0 auto;
   padding: 0;
+
 
   #search_row {
     align-items: center;
