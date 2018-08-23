@@ -5,8 +5,9 @@
 </div>
 
 <% if @my_jobs.empty? %>
-  <p>You don't have active jobs :(
-  </p>
+  <div class = "no-jobs">
+    <h4>You don't have active jobs</h4>
+  </div>
 <% else %>
   <% @my_jobs.each do |job|%>
     <% if (job.time > Time.now)%>
