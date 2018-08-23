@@ -26,102 +26,101 @@
         <%= inline_svg('icons/edit-light.svg', class: "icon_on_a_button") %>
       <% else  %>
 
-      <% booking = Booking.find_by(job: Job.find(params[:job_id]), student:@user)%>
-      <%=link_to "Send message", new_booking_message_path(booking) %>
+        <% booking = Booking.find_by(job: Job.find(params[:job_id]), student:@user)%>
+          <%=link_to "Send message", new_booking_message_path(booking) %>
 
-        <%= inline_svg('icons/comment-light.svg', class: "icon_on_a_button") %>
-      <% end %>
-    </div>
+          <%= inline_svg('icons/comment-light.svg', class: "icon_on_a_button") %>
+        <% end %>
+      </div>
 
-    <!-- everything below the message/edit button-->
-    <div class="col-xs-12 inner-section">
-      <div id="profile-refresh-area">
+      <!-- everything below the message/edit button-->
+      <div class="col-xs-12 inner-section">
+        <div id="profile-refresh-area">
 
-        <!-- User details university or profession-->
-        <div id="profile-anchor">
-          <%   if @user.student? %>
-            <%= inline_svg('icons/user-graduate-light.svg', class: "icon_on_text") %>
-            <span>
+          <!-- User details university or profession-->
+          <div id="profile-anchor">
+            <%   if @user.student? %>
+              <%= inline_svg('icons/user-graduate-light.svg', class: "icon_on_text") %>
+              <span>
+                <h5 class="text-left">
+                  University:
+                  <%= @user.university.name %></h5>
+              </span>
+            <% else  %>
+              <%= inline_svg('icons/user-tie-light.svg', class: "icon_on_text") %>
+              <span>
+                <h5 class="text-left">Profession:
+                  <%= @user.profession %></h5>
+              </span>
+            <% end %>
+          </div>
+
+          <!-- User details number of jobs-->
+          <div id="profile-jobs-stats">
+            <%   if @user.student %>
+              <%= inline_svg('icons/briefcase-light.svg', class: "icon_on_text") %>
               <h5 class="text-left">
-                University:
-                <%= @user.university.name %></h5>
-            </span>
-          <% else  %>
-            <%= inline_svg('icons/user-tie-light.svg', class: "icon_on_text") %>
-            <span>
-              <h5 class="text-left">Profession:
-                <%= @user.profession %></h5>
-            </span>
-          <% end %>
-        </div>
+                Jobs Taken:
+                <%= @my_bookings.count %></h5>
+            <% else  %>
+              <%= inline_svg('icons/briefcase-light.svg', class: "icon_on_text") %>
+              <span>
+                <h5 class="text-left">Jobs Created:
+                  <%= @my_jobs.count%></h5>
+              </span>
+            <% end %>
+          </div>
 
-        <!-- User details number of jobs-->
-        <div id="profile-jobs-stats">
-          <%   if @user.student %>
-            <%= inline_svg('icons/briefcase-light.svg', class: "icon_on_text") %>
-            <h5 class="text-left">
-              Jobs Taken:
-              <%= @my_bookings.count %></h5>
-          <% else  %>
-            <%= inline_svg('icons/briefcase-light.svg', class: "icon_on_text") %>
-            <span>
-              <h5 class="text-left">Jobs Created:
-                <%= @my_jobs.count%></h5>
-            </span>
-          <% end %>
-        </div>
-
-        <!-- User description -->
-        <div id="profile-description">
+          <!-- User description -->
+          <div id="profile-description">
             <%= inline_svg('icons/briefcase-light.svg', class: "icon_on_text") %>
             <span>
               <h5 class="text-left">About me:
                 <%= @user.description %>
-            </span>
-        </div>
+              </span>
+            </div>
 
-        <!-- User Ratings area (boxes)-->
-        <div class="col-xs-12 ratings-boxes">
-          <div class="row">
+            <!-- User Ratings area (boxes)-->
+            <div class="col-xs-12 ratings-boxes">
+              <div class="row">
 
-            <%= link_to '#', id: "cancelation-card" do %>
-              <%= render 'shared/small-card-rating', title:"CANCELATION RATE", icon_path:"icons/user-cancel.svg" %>
+                <%= link_to '#', id: "cancelation-card" do %>
+                <%= render 'shared/small-card-rating', title:"CANCELATION RATE", icon_path:"icons/user-cancel.svg" %>
+              <% end %>
+
+              <%= link_to '#', id: "average-card", onclick: "showCategoryRatings(); return false;" do %>
+              <%= render 'shared/small-card-rating', title:"AVERAGE RATE", icon_path:"icons/user-check-light.svg" %>
             <% end %>
-
-            <%= link_to '#', id: "average-card", onclick: "showCategoryRatings(); return false;" do %>
-              <%= render 'shared/small-card-rating', title:"AVERAGE RATE", icon_path:"icons/user-check-light.svg"  %>
-            <% end %>
-
 
             <%= link_to '#', class: "category-card", style: "display: none" do %>
-              <%= render 'shared/small-card-rating', title:"MOVING", icon_path:"icons/truck-moving-light.svg" %>
-            <% end %>
+            <%= render 'shared/small-card-rating', title:"MOVING", icon_path:"icons/truck-moving-light.svg" %>
+          <% end %>
 
-            <%= link_to '#', class: "category-card", style: "display: none"  do %>
-              <%= render 'shared/small-card-rating', title:"SITTING", icon_path:"icons/paw-light.svg" %>
-            <% end %>
+          <%= link_to '#', class: "category-card", style: "display: none" do %>
+          <%= render 'shared/small-card-rating', title:"SITTING", icon_path:"icons/paw-light.svg" %>
+        <% end %>
 
-            <%= link_to '#', class: "category-card", style: "display: none"  do %>
-              <%= render 'shared/small-card-rating', title:"ERRANDS", icon_path:"icons/person-carry-light.svg" %>
-            <% end %>
+        <%= link_to '#', class: "category-card", style: "display: none" do %>
+        <%= render 'shared/small-card-rating', title:"ERRANDS", icon_path:"icons/person-carry-light.svg" %>
+      <% end %>
 
-            <%= link_to '#', class: "category-card", style: "display: none"  do %>
-              <%= render 'shared/small-card-rating', title:"HOME", icon_path:"icons/home-light.svg" %>
-            <% end %></div>
-
-        </div>
-      </div>
-      <!-- fim do container das boxes dos ratings-->
-    </div>
-
-
-  <!-- See more and see less options -->
-      <%= link_to "See more ...", '#', id:"see-more-text"%>
-
-      <%= link_to "See less ...", '#', id:"see-less-text", style: "display: none"  %>
-
-
+      <%= link_to '#', class: "category-card", style: "display: none" do %>
+      <%= render 'shared/small-card-rating', title:"HOME", icon_path:"icons/home-light.svg" %>
+    <% end %>
   </div>
-  <!-- fim da inner sections white-->
+
+</div>
+</div>
+<!-- fim do container das boxes dos ratings-->
+</div>
+
+<!-- See more and see less options -->
+
+<%=link_to "Logout", destroy_user_session_path %>
+
+<%= link_to "See less ...", '#', id:"see-less-text", style: "display: none" %>
+
+</div>
+<!-- fim da inner sections white-->
 </div>
 <!-- fim do background white-->
