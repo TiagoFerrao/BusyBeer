@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   def show
     @my_jobs = Job.where(client:current_user)
     @my_bookings = Booking.where(student:current_user)
-    
+
   end
 
   def edit
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :address, :birthday, :phone, :photo, :photo_cache)
+    params.require(:user).permit(:name, :email, :address, :birthday, :phone, :photo, :photo_cache, :student)
   end
 
   def fetch_user

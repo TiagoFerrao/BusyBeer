@@ -6,7 +6,7 @@
     <% else  %>
       <%= image_tag("icons/no_picture.svg") %>
     <% end %>
-  </div>
+</div>
 
   <!-- User details Section (white card)-->
   <div class="container-fluid profile-fields background-white">
@@ -44,7 +44,7 @@
               <span>
                 <h5 class="text-left">
                   University:
-                  <%= @user.university.name %></h5>
+                  <%= @user.university.name if  !@user.university.nil? %></h5>
               </span>
             <% else  %>
               <%= inline_svg('icons/user-tie-light.svg', class: "icon_on_text") %>
