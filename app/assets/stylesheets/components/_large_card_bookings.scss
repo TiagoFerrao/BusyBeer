@@ -5,13 +5,24 @@
   margin-top: 6px;
   position: relative;
 
+  .booking-state {
+    padding-left: 15px;
+  }
+
+  .addres-large-card {
+    padding-top: 7px;
+  }
+
+  .location-card {
+    padding-top: 15px;
+  }
+
   .booking-card-section {
     &.up {padding-top: 15px;
       .job-card-title {
         h4 {font-weight: 600;
             padding-left: 15px;
             text-align: left;
-            height: 72px;
             border-left: 1px solid $gray2;
             }
         }
