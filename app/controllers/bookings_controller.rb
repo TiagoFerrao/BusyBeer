@@ -5,7 +5,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(job: job, student: current_user)
     @booking.save!
 
-    redirect_to job
+    redirect_to job_path(@job)
   end
 
   def destroy
