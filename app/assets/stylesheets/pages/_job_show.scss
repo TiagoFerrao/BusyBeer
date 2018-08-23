@@ -2,16 +2,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   padding: 0;
 // section 1
   .section1-title-and-icon {
     display: flex;
-    align-items:flex-end;
-    justify-content: space-between;
+    align-items:flex-start;
+    justify-content:flex-start;
+    .job-title {
+      padding-left:25px;
+
+    }
     .job-category-icon {
       padding-top: 10px;
-
     }
   }
   // section 2
@@ -27,6 +29,9 @@
     justify-content: space-between;
     align-items: center;
     font-size: 10px;
+    .job-owner {
+      padding-bottom: 10px;
+    }
     .job-details {
       display: flex;
       justify-content: center;
@@ -39,11 +44,19 @@
       }
   }
   // section 3
-
+  .section3-job-description {
+    padding-left: 25px;
+  }
 
   // section 4 map
 
   // section 5 bookings
+  .section5-bookings {
+    padding-bottom: 15px;
+    h3, h4 {
+      padding-left: 10px;
+    }
+  }
 
   // section 6 apply button
   .applied-button {
