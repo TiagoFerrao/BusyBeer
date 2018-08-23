@@ -1,9 +1,12 @@
-<div class="col-xs-12 show-job-frame">
+<div class="container-fluid show-job-frame">
+  <div class="row">
+    <div class="col-xs-12 col-md-6 ">
 
-  <div class="section1-title-and-icon">
+
+  <div class="container section1-title-and-icon">
     <div class="row">
       <div class="col-xs-10 job-title">
-        <h1><strong><%= @job.title.capitalize %></strong></h1>
+        <h1 class="text-left"><strong><%= @job.title.capitalize %></strong></h1>
       </div>
       <div class="col-xs-2 job-category-icon">
         <% if @job.category.name == "moving" %>
@@ -20,7 +23,6 @@
   </div> <!-- fim da section 1 titulo e icon -->
 
   <div class="section2-owner-and-details">
-    <div class="row">
       <!-- foto -->
       <div class="col-xs-3 job-owner">
         <% if @job.client.photo? %>
@@ -45,30 +47,20 @@
         <i class="fal fa-money-bill-alt"></i>
         <h5><%= "#{@job.price} €" %></h5>
       </div>
-    </div> <!-- fim do row 2 -->
+
   </div> <!-- fim da section 2 imagem e detalhes -->
 
-  <div class="container-fluid section3-job-description">
-    <div class="row">
-      <div class="col-xs-12">
-        <h3>Description</h3>
-        <p><%= @job.description %></p>
-      </div>
-    </div>
+  <div class="col-xs-12 section3-job-description">
+    <h3>Description</h3>
+    <p><%= @job.description %></p>
   </div>
 
-  <div class="container-fluid section4-map-falso">
-    <div class="row">
-      <div class="col-xs-12">
-        <div id="map" style="width: 375px; height: 300px;" data-markers="<%= @markers.to_json %>" >
-      </div>
-    </div>
+  <div class="col-xs-12 section4-map-falso">
+    <div id="map" style="width: 375px; height: 300px;" data-markers="<%= @markers.to_json %>" ></div>
   </div>
 
-  <div class="container-fluid section5-bookings">
-    <div class="row">
+  <div class="col-xs-12 section5-bookings">
     <!-- If it's my job -->
-
       <% if @job.client == current_user %>
         <% if @job.students.empty? %>
           <hr>
@@ -87,11 +79,9 @@
             </div>
           <% end %>
         <% end %>
-    </div>
   </div>
 
-  <div class="container-fluid section6-apply-button">
-    <div class="row">
+  <div class="col-xs-12 section6-apply-button">
       <!-- If it is NOT my job -->
       <% elsif @job.students.include? current_user %>
       <!-- If I already applied for it -->
@@ -103,8 +93,9 @@
           <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post", class:"btn btn-accent"%>
         </div>
       <% end %>
-    </div>
   </div>
 
+
+    </div>
   </div>
-  </div><!-- fim da pagina show job frame-->
+</div>
