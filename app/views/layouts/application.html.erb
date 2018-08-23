@@ -33,10 +33,6 @@
   </head>
 
   <body>
-    <% if user_signed_in? %>
-      <input id="get_user_id" type="hidden" name="returns current user for java script" value=<%=current_user.id %>>
-      <%= render 'shared/header' %>
-    <% end %>
 
     <%= render 'shared/flashes' %>
 
