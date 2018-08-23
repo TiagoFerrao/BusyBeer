@@ -17,6 +17,8 @@
           </div>
           <div class="job-card-title col-xs-8">
             <h4><%= job.title.capitalize %></h4>
+              <div class="booking-state"><p><%= job.bookings.find_by(student: current_user).state %></p></div>
+
           </div>
           <!-- INSERT AVATAR IMAGE OF THE OWNER -->
           <div class="avatar-card- col-xs-2">
@@ -25,7 +27,6 @@
             <%= cl_image_tag student.photo, image_options %>
           <% else  %>
             <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
-
           <% end %>
           </div>
         </div> <!-- fim do section up -->
@@ -38,12 +39,12 @@
             <h4><%= job.time.strftime('%a %d') %></h4>
             <h4><%= job.time.strftime('%B') %></h4>
           </div>
-          <div class='col-xs-8'>
+          <div class='col-xs-8 location-card'>
             <!-- INSERT LOCATION -->
 
-                <div class="fa fa-map-marker">
-                  <p><%= "#{job.address}" %></p>
-              </div>
+            <div class="fa fa-map-marker">
+              <div class="addres-large-card"><p><%= "#{job.address}" %></p></div>
+            </div>
 
           </div>
         </div> <!-- fim da section down -->
