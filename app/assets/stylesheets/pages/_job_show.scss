@@ -1,7 +1,40 @@
 .show-job-frame{
   display: flex;
   flex-direction: column;
-  width: 375px;
+  width: 400px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+
+  .section1-title-and-icon {
+    .job-category-icon {
+      padding-top: 10px;
+    }
+  }
+
+  .section2-owner-and-details{
+    background-color: $light;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    .job-details {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      i {
+        font-size: 15px;
+        font-weight: bold;
+        color: $accent;
+      }
+    }
+
+  }
 
 
 }

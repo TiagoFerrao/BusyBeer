@@ -16,7 +16,7 @@
   </div>
 <% end %>
         <div class="new-form-inputs">
-          <%= f.input :title, placeholder: "Job Title", input_html: { class: 'input_with_icon user-icon' }, label: false %>
+          <%= f.input :title, placeholder: "Job Title", input_html: { class: 'input_with_icon job-icon' }, label: false %>
           <%= f.input :address, placeholder: "Job Location" , input_html: { class: 'input_with_icon address-icon', id: 'job_address'}, label: false %>
           <%= f.input :time, placeholder: 'Date & Time', as: :string, input_html: {id: "datepicker", class: 'input_with_icon calendar-icon' }, label: false %>
           <%= f.input :price, placeholder: "Price" , input_html: { class: 'input_with_icon price-icon' }, label: false %>
@@ -31,5 +31,3 @@
     </div>
   </div>
 </div>
-
-
