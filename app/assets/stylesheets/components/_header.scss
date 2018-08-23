@@ -5,6 +5,11 @@
   height: 88px;
   background-color: $accent;
 
+  .left-header {
+    p, i {
+      font-size:5px !important;}
+    }
+
   .arrow {
     padding: 0px 0px 0px 5px;
     width: 10px;
@@ -12,12 +17,12 @@
 
   .text-header {
     padding: 0;
-    color: $gray1;
+    color: $accent;
     text-align: center;
   }
 
-  i{
-    font-size: 25px;
+  i {
+    font-size: 15px;
   }
 
   a {
