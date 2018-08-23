@@ -1,11 +1,16 @@
 .tab {
   display:flex;
   cursor: pointer;
+  width: 100%;
+  height: 40px;
+  box-shadow: 1px 1px 1px  $gray4;
   .tab-section {
     width: 50%;
+    background-color: $light
   }
 }
 
 .tab-active {
-  border-bottom: 3px solid $accent;
+  border-bottom: 4px solid $accent;
+  color: $accent;
   }

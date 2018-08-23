@@ -6,46 +6,52 @@
   fill: $gray4;
 
   &.email-icon {
-    background-image: url('icons/e-mail');
+    background-image: url('icons/e-mail.svg');
     background-size: 20px;
   }
 
   &.password-icon {
-    background-image: url('icons/password');
+    background-image: url('icons/password.svg');
     background-size: 15px;
   }
 
   &.user-icon {
-    background-image: url('icons/user');
+    background-image: url('icons/user.svg');
   }
 
   &.delete-icon {
-    background-image: url('icons/delete');
+    background-image: url('icons/delete.svg');
   }
 
   &.price-icon {
-    background-image: url('icons/price');
+    background-image: url('icons/price.svg');
     background-size: 12px;
   }
 
   &.calendar-icon {
-    background-image: url('icons/calendar-icon');
+    background-image: url('icons/calendar-icon.svg');
     background-size: 17px;
   }
 
   &.address-icon {
-    background-image: url('icons/address-icon');
+    background-image: url('icons/address-icon.svg');
     background-size: 15px;
   }
 
   &.time-icon {
-    background-image: url('icons/time-icon');
+    background-image: url('icons/time-icon.svg');
     background-size: 17px;
   }
 
   &.trash-icon {
-    background-image: url('icons/trash-alt-light');
+    background-image: url('icons/trash-alt-light.svg');
     background-size: 17px;
+  }
+
+  &.job-icon {
+    background-image: url('icons/briefcase-light.svg');
+    background-size: 17px;
+
   }
 
 
@@ -63,6 +69,7 @@
 .icon_on_text {
   height: 15px;
   fill: $gray4;
+
 }
 
 .icon_on_small_card{
