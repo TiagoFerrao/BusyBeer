@@ -52,7 +52,7 @@
 </div> <!-- fim da section 2 imagem e detalhes -->
 
 <div class="container-fluid section3-job-description">
-  <div class="row ">
+  <div class="row">
     <div class="col-xs-12">
       <h3>Description</h3>
       <p><%= @job.description %></p>
@@ -63,7 +63,9 @@
 <div class="container-fluid section4-map-falso">
   <div class="row">
     <div class="col-xs-12">
+
       <div id="map" style="width: 375px; height: 300px;" data-markers="<%= @markers.to_json %>" >
+
 
     </div>
   </div>
@@ -75,6 +77,7 @@
 
     <% if @job.client == current_user %>
       <% if @job.students.empty? %>
+      <hr>
         <h4>There are no candidates for this job</h4>
       <% else %>  <!-- Mostrar students applied SE estados de todos sao pendentes -->
         <% if @selected_student == nil %>
@@ -102,11 +105,13 @@
     <% elsif @job.students.include? current_user %>
       <!-- If I already applied for it -->
       <div class="new-form-actopms">
-        <p>Applied</p>
+        <a href="#" class="btn btn-accent">Applied</a>
+
       </div>
     <% else %> <!-- If I didn't applied for this job - btn to appl -->
-      <div class="new-form-actopms">
-        <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post"%>
+      <div class="new-form-actions applied-button">
+        <%= link_to "Apply for this job", bookings_path(job: @job.id, student: current_user), method: "post", class:"btn btn-accent"%>
+
       </div>
     <% end %>
   </div>
