@@ -1,8 +1,8 @@
 
-<div class="container-fluid background-white">
+<div  class="container-fluid" id="homepage_container">
   <div class="container section-search-bottom text-center">
       <div class="row searchFilter" >
-       <div class="col-sm-12" >
+       <div class="col-xs-12" >
         <div class="top-bar-right" >
           <form action="/" class="form-inline text-center" style="display: flex;">
             <input id="job_address" type="text" class="form-control find" aria-label="Text input with segmented button dropdown" name="query" placeholder="Search..." style="width: 260px !important;" >
@@ -34,7 +34,7 @@
 
   <div
     id="map"
-    style="width: 100%;
+    style="width: 375px;
     height: 570px;"
     data-markers="<%= @markers.to_json %>"
   ></div>
