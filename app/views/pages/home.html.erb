@@ -1,41 +1,44 @@
-
-<div  class="container-fluid" id="homepage_container">
+<div class="container-fluid" id="homepage_container">
   <div class="container section-search-bottom text-center">
-      <div class="row searchFilter" >
-       <div class="col-xs-12" >
-        <div class="top-bar-right" >
-          <form action="/" class="form-inline text-center" style="display: flex;">
-            <input id="job_address" type="text" class="form-control find" aria-label="Text input with segmented button dropdown" name="query" placeholder="Search..." style="width: 260px !important;" >
+    <div class="row searchFilter">
+      <div class="col-xs-12">
+        <div class="top-bar-right">
+          <form action="/" class="form-inline text-center" id="search_row" style="display: flex; align-items:center;">
+            <input id="job_address" type="text" class="form-control find" aria-label="Text input with segmented button dropdown" name="query" placeholder="Search..." style="width: 200px !important;">
             <div class="input-group-btn">
-              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" ><span class="label-icon" >Category</span> <span class="caret"></span></button>
-              <div class="dropdown-menu categorymenu" style="min-width: 100px !important" >
-               <ul class="category_filters list-unstyled" >
-                <li >
-                 <input class="cat_type category-input" data-label="All" id="home" value="home" name="category" type="radio" ><label for="all" >Home</label>
-               </li>
-               <li >
-                 <input type="radio" name="category" id="Design" value="sitting" ><label class="category-label" for="sitting" >Sitting</label>
-               </li>
-               <li>
-                 <input type="radio" name="category" id="Design" value="errands" ><label class="category-label" for="errands" >Errands</label>
-               </li>
-               <li >
-                 <input type="radio" name="category" id="Design" value="moving" ><label class="category-label" for="moving" >Moving</label>
-               </li>
-             </ul>
-           </div>
-        </form>
-        <button id="searchBtn" type="submit" class="btn btn-secondary btn-search" ><span class="glyphicon glyphicon-search" style="position: relative;" >&nbsp;</span> <span class="label-icon" >Search</span></button>
-         </div>
-       </div>
-     </div>
+              <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                <span class="label-icon">Category</span>
+                <span class="caret"></span></button>
+              <div class="dropdown-menu categorymenu" style="min-width: 100px !important">
+                <ul class="category_filters list-unstyled">
+                  <li >
+                    <input class="cat_type category-input" data-label="All" id="home" value="home" name="category" type="radio">
+                    <label for="all">Home</label>
+                  </li>
+                  <li >
+                    <input type="radio" name="category" id="Design" value="sitting">
+                    <label class="category-label" for="sitting">Sitting</label>
+                  </li>
+                  <li>
+                    <input type="radio" name="category" id="Design" value="errands">
+                    <label class="category-label" for="errands">Errands</label>
+                  </li>
+                  <li >
+                    <input type="radio" name="category" id="Design" value="moving">
+                    <label class="category-label" for="moving">Moving</label>
+                  </li>
+                </ul>
+              </div>
+            </form>
+            <button id="searchBtn" type="submit" class="btn btn-secondary btn-search">
+              <span class="glyphicon glyphicon-search" style="position: relative;">&nbsp;</span>
+              <span class="label-icon">Search</span></button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div
-    id="map"
-    style="width: 375px;
-    height: 570px;"
-    data-markers="<%= @markers.to_json %>"
-  ></div>
+  <div id="map" style="width: 375px;
+    height: 570px;" data-markers="<%= @markers.to_json %>"></div>
 </div>

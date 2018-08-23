@@ -1,11 +1,19 @@
 #homepage_container {
   width: 375px;
-  display: flex;
-  justify-content: space-around;
+  display:flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content:center;
+  margin: 0 auto;
+  padding: 0;
+
+  #search_row {
+    align-items: center;
+  }
 
   .section-search-bottom {
     position: absolute;
-    top: 50px;
+    top: 25px;
     z-index: 100;
   }
 }
