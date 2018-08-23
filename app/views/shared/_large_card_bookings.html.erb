@@ -22,7 +22,7 @@
           <div class="avatar-card- col-xs-2">
              <% if job.client.photo? %>
             <% image_options = { height: 50, width: 50, crop: :fill } %>
-            <%= cl_image_tag student.photo, image_options %>
+            <%= cl_image_tag job.client.photo, image_options %>
           <% else  %>
             <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
 

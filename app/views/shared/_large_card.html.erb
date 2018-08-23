@@ -2,8 +2,8 @@
 
 <%= link_to job_path(job) do %>
   <div class="container-fluid">
-
     <div class="card col-xs-12">
+
       <div class="row">
         <div class="container job-card-section up">
           <div class="job-card-category-icon col-xs-2">
@@ -24,7 +24,7 @@
             <%= link_to image_tag('icons/trash-alt-light.svg'), job_path(job), method: "delete"%>
           </div>
         </div> <!-- fim do section up -->
-      </div> <!-- fim do row -->
+      </div> <!-- fim do row  1-->
 
          <!-- fim do section up -->
       <div class="row">
@@ -40,8 +40,8 @@
               <%= "#{job.bookings.count} students applied" %>
             <% end %>
           </div>
-        </div> <!-- fim da section down -->
-      </div> <!-- fim do row -->
+        </div> <!-- fim do row section down -->
+      </div> <!-- fim da section down -->
 
     </div>
   </div>
