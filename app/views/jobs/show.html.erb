@@ -64,7 +64,7 @@
       <% if @job.client == current_user %>
         <% if @job.students.empty? %>
           <hr>
-          <h4>There are no candidates for this job</h4>
+          <h4>There are no candidates for this job 😕 </h4>
         <% else %>  <!-- Mostrar students applied SE estados de todos sao pendentes -->
           <% if @selected_student == nil %>
             <h3>Students Applied</h3>
