@@ -4,12 +4,12 @@
       <!-- Coluna foto -->
       <div class="col-xs-3">
         <% if student.photo? %>
-          <%= link_to user_path(student) do %>
+          <%= link_to user_path(student, job_id: @job.id) do %>
           <% image_options = { height: 50, width: 50, radius:50, crop: :fill } %>
             <%= cl_image_tag student.photo, image_options %>
           <% end %>
         <% else  %>
-          <%= link_to user_path(student) do %>
+          <%= link_to user_path(student, job_id: @job.id) do %>
           <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
         <% end %>
 
