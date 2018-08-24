@@ -1,7 +1,8 @@
 <%= link_to job_path(job) do %>
   <div class="container-fluid">
 
-    <div class="card col-xs-12">
+    <div class="card-booking col-xs-12">
+
       <div class="row">
         <div class="container booking-card-section up">
           <div class="job-card-category-icon col-xs-2">
@@ -21,9 +22,9 @@
 
           </div>
           <!-- INSERT AVATAR IMAGE OF THE OWNER -->
-          <div class="avatar-card- col-xs-2">
+          <div class="avatar-card col-xs-2">
              <% if job.client.photo? %>
-            <% image_options = { height: 50, width: 50, crop: :fill } %>
+            <% image_options = { height: 50, width: 50, radius: 50, crop: :fill } %>
             <%= cl_image_tag job.client.photo, image_options %>
           <% else  %>
             <%= image_tag("icons/user.svg", class:"avatar-round-small")%>
@@ -41,15 +42,11 @@
           </div>
           <div class='col-xs-8 location-card'>
             <!-- INSERT LOCATION -->
-
-            <div class="fa fa-map-marker">
-              <div class="addres-large-card"><p><%= "#{job.address}" %></p></div>
-            </div>
-
+                <p><%= "#{job.address}" %></p>
           </div>
         </div> <!-- fim da section down -->
       </div> <!-- fim do row -->
 
+      <% end %>
     </div>
   </div>
-<% end %>

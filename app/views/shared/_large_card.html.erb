@@ -43,9 +43,9 @@
                   <% else %>
                     <!-- show avatar do student -->
                     <div class="student-photo-on-job-list text-right">
-                      <span> <%=job.bookings.find_by(state:1).student.name %>will do your job</span>
-                      <% image_options = { height: 50, width: 50, radius: 50, crop: :fill } %>
-                      <%= cl_image_tag job.bookings.find_by(state:1).student.photo, image_options %>
+                      <div class="col-xs-10"><%=job.bookings.find_by(state:1).student.name %><p> will do your job</p></div>
+                      <div class="col-xs-2"><% image_options = { height: 50, width: 50, radius: 50, crop: :fill } %>
+                      <%= cl_image_tag job.bookings.find_by(state:1).student.photo, image_options %></div>
                   <% end %>
                     </div>
 

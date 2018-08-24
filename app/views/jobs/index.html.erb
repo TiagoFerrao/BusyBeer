@@ -21,6 +21,7 @@
        Jobs Accepted</h3>
   </div>
 
+
   <% @jobs.each do |job| %>
     <% if (job.students.include? current_user) %>
 
@@ -28,3 +29,7 @@
     <% end %>
   <% end %>
 <% end %>
+
+<div class="final_countdown">
+
+</div>

@@ -1,8 +1,9 @@
-.card {
+.card-booking {
   height: 156px;
   background-color: $light;
   box-shadow: 1px 1px 1px 1px $gray3;
   margin-top: 6px;
+  margin-bottom: 6px;
   position: relative;
 
   .booking-state {
@@ -39,23 +40,21 @@
     }
 
     &.down {
-      .job-card-date {
+      .time-booking-card{
         position: absolute;
         bottom: 10px;
-        left: -25px;
+        left: -20px;
           h4 {
           text-align: center;
           text-transform: capitalize;
           font-weight: bold;
           }
-        }
-        .time-booking-card{
-          h4 {
-          text-align: center;
-          text-transform: capitalize;
-          font-weight: bold;
-          }
-        }
       }
+      .location-card {
+          position: absolute;
+          right: 10px;
+          bottom: 5px;
+        }
     }
   }
+}

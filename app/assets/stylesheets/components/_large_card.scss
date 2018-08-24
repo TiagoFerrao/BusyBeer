@@ -31,7 +31,7 @@
       .job-card-date {
         position: absolute;
         bottom: 10px;
-        left: -25px;
+        left: -20px;
           h4 {
           text-align: center;
           text-transform: capitalize;
@@ -40,8 +40,12 @@
         }
         .job-card-bookings {
           position: absolute;
-          right: 10px;
-          bottom: 25px;
+          right: 30px;
+          bottom: 15px;
+          .student-photo-on-job-list {
+            display:flex;
+
+          }
 
           }
       }
